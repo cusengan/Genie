@@ -41,7 +41,7 @@ class EventForm extends Component{
 		const url = 'http://localhost:8080/event';
 		axios.post(url, this.state).then((response) => {
 			console.log(response.data);
-		})
+		});
 		history.push('/');
 	}
 

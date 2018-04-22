@@ -5,7 +5,6 @@ import {connect} from 'react-redux';
 class HeaderComponent extends Component {
     constructor(props) {
       super(props);
-      console.log(this.props.user);
       this.renderSignIn = this.renderSignIn.bind(this);
     }
 

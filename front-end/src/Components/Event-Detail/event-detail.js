@@ -6,6 +6,8 @@ import "./event-detail.css";
 import "./event.js";
 import history from '../../history';
 import HeaderComponent from '../HeaderComponent';
+import {selectEvent} from '../../actions/eventAction';
+import {bindActionCreators} from 'redux';
 
 // import FontIcon from 'material-ui/FontIcon';
 //import Dialog from 'material-ui/Dialog';
@@ -30,11 +32,13 @@ class Event_Detail extends React.Component
     console.log(this.props.currentEvent._id);
     console.log('userID: ',this.props.user.userInfo._id);
     const url = `http://localhost:8080/event/${this.props.currentEvent._id}/${this.props.user.userInfo._id}`;
-    if(this.props.user.isLoggedIn){
-      axios.post(url).then((response) => {
-        console.log(response.data);
-        history.push('/event');
-      })
+    console.log(url);
+    if(this.props.user.loggedIn){
+      axios.post(url, this.state).then((response) => {
+        this.props.selectEvent(this.props.currentEvent);
+      }).catch((e) => {
+        console.log(e);
+      });
     }
   }
 
@@ -61,6 +65,10 @@ class Event_Detail extends React.Component
 
 function mapStateToProps({user, currentEvent}){
   return {user, currentEvent};
+}
+
+function mapDispatchToProps(dispatch) {
+  return bindActionCreators({selectEvent}, dispatch);
 }
 
 export default connect(mapStateToProps)(Event_Detail);

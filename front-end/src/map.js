@@ -80,7 +80,6 @@ class MyFancyComponent extends React.PureComponent {
         // window.location.href = marker.owner_url;
         //call eventAction
         this.props.selectEvent(marker);
-        console.log(this.props.currentEvent);
         history.push('/event');
   }
   render() {

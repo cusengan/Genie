@@ -83,7 +83,7 @@ app.post('/user', (req, res) => {
 app.post('/signin', (req, res) => {
   User.findOne({
     password: req.body.password,
-    email: req.body.password
+    email: req.body.email
   }).then((user) =>{
     if(!user){
       return res.status(404).send({
