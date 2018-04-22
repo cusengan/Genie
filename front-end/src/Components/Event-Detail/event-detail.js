@@ -36,6 +36,8 @@ class Event_Detail extends React.Component
     if(this.props.user.loggedIn){
       axios.post(url, this.state).then((response) => {
         this.props.selectEvent(this.props.currentEvent);
+        console.log(this.props.currentEvent);
+        history.push('/event');
       }).catch((e) => {
         console.log(e);
       });
@@ -71,4 +73,4 @@ function mapDispatchToProps(dispatch) {
   return bindActionCreators({selectEvent}, dispatch);
 }
 
-export default connect(mapStateToProps)(Event_Detail);
+export default connect(mapStateToProps, mapDispatchToProps)(Event_Detail);
