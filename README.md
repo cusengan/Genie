@@ -64,4 +64,4 @@ You should now be able to use the web app on your computer.
 
 * **William Truong** - [Cusengan](https://github.com/cusengan)
 * **Jeet Sigh** - [singhgagan2697](https://github.com/singhgagan2697)
-* **Quan Doan** - [quandoan97](https://github.com/quandoan97)
+* **Nhi Luong** - [kynhi](https://github.com/kynhi)
